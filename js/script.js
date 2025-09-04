@@ -83,7 +83,6 @@ clearBtn.addEventListener("click", function () {
 
   document.querySelector(".history-container").innerHTML = "";
 });
-
 // ========= Copy Counter ==========
 
 let totalCopy = 0;
