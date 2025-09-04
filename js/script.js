@@ -15,6 +15,24 @@ heartBtns.forEach((btn) => {
 });
 // ===========End Heat Counter =======================
 
+// getHistoryData
+function getHistoryData(data) {
+  const historyContainer = document.querySelector(".history-container");
+  const div = document.createElement("div");
+  div.innerHTML = `
+   <div
+                class="flex justify-between bg-[#FAFAFA] px-3 py-4 rounded-xl my-3 shadow"
+              >
+                <div class="text-left text-[#5c5c5c]">
+                  <h4 class="text-[#111111] font-medium">${data.title}</h4>
+                  <span>${data.infoNumber}</span>
+                </div>
+                <p>${data.time}</p>
+              </div>
+  `;
+  historyContainer.appendChild(div);
+}
+
 // ===================
 // Coin Count
 let coinCountValue = 100;
