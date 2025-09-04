@@ -65,3 +65,28 @@ clearBtn.addEventListener("click", function () {
 
   document.querySelector(".history-container").innerHTML = "";
 });
+
+// ========= Copy Counter ==========
+
+let totalCopy = 0;
+let copyCounter = document.querySelector(".copyCounter");
+
+function getCopyValue() {
+  totalCopy += 1;
+  copyCounter.innerText = totalCopy;
+}
+let buttons = document.querySelectorAll(".copyBtn");
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    let infoNumbers = button.parentElement.parentElement;
+    let data = infoNumbers.querySelectorAll(".info-number");
+
+    data.forEach((data) => {
+      let text = data.innerText;
+      alert(`নাম্বার কপি হয়েছে: ${text} `);
+      navigator.clipboard.writeText(text);
+    });
+
+    getCopyValue();
+  });
+});
